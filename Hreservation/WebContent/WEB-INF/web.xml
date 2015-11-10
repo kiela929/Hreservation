@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>reservation</display-name>
+<servlet>
+ 		<servlet-name>reservation2</servlet-name>
+ 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+ 		<!-- 컨트롤러를 호출하는 것! 위의 클래스는 라이브러리에 포함한 파일과 같음.  -->
+ 	</servlet>
+ 	
+ 	<servlet-mapping>
+ 		<servlet-name>reservation2</servlet-name>
+ 		<url-pattern>*.do</url-pattern>
+ 	</servlet-mapping>
+</web-app>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+	<typeAlias alias="reserve" type="reserve.reserve.ReserveDTO"/>
+	<typeAlias alias="part" type="reserve.reserve.PartDTO"/>
+	<typeAlias alias="doctorDTO" type="reserve.join.DoctorDTO"/>
+		<typeAlias alias="pie" type="reserve.chart.PieDTO"/>
+	
+	
+	<resultMap class="pie" id="pieList">
+	<result property="part_name" column="part_name"/>
+	<result property="partnum" column="partnum"/>
+	</resultMap>
+		<resultMap class="pie" id="pieList2">
+		<result property="reserve_date" column="reserve_date"/>
+		<result property="reservenum" column="reservenum"/>
+	</resultMap>
+	
+	<resultMap class="doctorDTO" id="doctorInPart">
+	
+	<result property="doctornum" column="doctornum"/>
+	<result property="id" column="id"/>
+	<result property="pw" column="pw"/>
+	<result property="name" column="name"/>
+	<result property="jumin1" column="jumin1"/>
+	<result property="jumin2" column="jumin2"/>
+	<result property="age" column="age"/>
+
+	<result property="phone1" column="phone1"/>
+	<result property="phone2" column="phone2"/>
+	<result property="phone3" column="phone3"/>
+	<result property="postnum1" column="postnum1"/>
+	<result property="postnum2" column="postnum2"/>
+	<result property="post1" column="post1"/>
+	<result property="post2" column="post2"/>
+	<result property="email" column="email"/>
+	<result property="grade" column="grade"/>
+	<result property="partnum" column="partnum"/>
+	</resultMap>
+	
+	<resultMap class="reserve" id="reserveList">
+	<result property="reservenum" column="reservenum"/>
+	<result property="id" column="id"/>
+	<result property="doctornum" column="doctornum"/>
+	<result property="reserve_date" column="reserve_date"/>
+	<result property="str_time" column="str_time"/>
+		<result property="reg_date" column="reg_date"/>
+	</resultMap>
+	
+	<resultMap class="part" id="partDTO">
+	<result property="partnum" column="partnum"/>
+	<result property="part_name" column="part_name"/>
+	</resultMap>
+	
+	<insert id="addReserve" parameterClass="reserve">
+	insert into reserve (reservenum,id,doctornum,reserve_date,str_time,reg_date) values (reservenum_seq.nextval,#id#,#doctornum#,#reserve_date#,#str_time#,sysdate)
+	</insert>
+	<select id="reserve_list" parameterClass="String" resultMap="reserveList">
+	select * from reserve where id=#id# order by reservenum
+	</select>
+	<select id="reserve_list_doctor" parameterClass="String" resultMap="reserveList">
+	select * from reserve where doctornum=(select doctornum from doctor where id=#id#)
+	</select>
+	<!-- 
+		<select id="reserve_list_doctor_now" parameterClass="String" resultMap="reserveList">
+	select * from reserve where doctornum=(select doctornum from doctor where id=#id#) and reserve_date>오늘0시
+	</select>
+	
+	 -->
+	<delete id="reserveDel" parameterClass="int">
+	delete from reserve where reservenum=#reservenum#
+	</delete>
+	<select id="findPartInfo" resultMap="partDTO">
+	select * from part
+	</select>
+	<select id="findPart" parameterClass="int" resultClass="part">
+	select * from part where partnum=#partnum#
+	</select>
+	<!-- 진료과에 속해있는 의사정보 모두 가져오기 -->
+	<select id="doctor_list" parameterClass="int" resultMap="doctorInPart">
+	select * from member,doctor where member.id=doctor.id and doctor.partnum=#partnum#
+	</select>
+		<select id="all_reserve" parameterClass="String" resultMap="reserveList">
+	select * from reserve
+	</select>
+	
+	
+	<!-- 차트 -->
+	<!-- 이번달 예약기준일 -->
+	<select id="findToReserveCount_regdate" parameterClass="pie" resultMap="pieList">
+	select part_name,count(partnum) as partnum from (select p.partnum,p.part_name,r.reg_date,r.id,
+	d.doctornum from part p,reserve r,doctor d
+where r.doctornum=d.doctornum and d.partnum=p.partnum and r.reg_date>#this_month_date# and #today#>r.reg_date)
+group by part_name
+	</select>
+	<!-- 이번달 예약일 -->
+		<select id="findToReserveCount_reserve_date" parameterClass="pie" resultMap="pieList">
+	select part_name,count(partnum) as partnum from (select p.partnum,p.part_name,r.reserve_date,r.id,
+	d.doctornum from part p,reserve r,doctor d
+where r.doctornum=d.doctornum and d.partnum=p.partnum and r.reserve_date>#this_month_date# and #today#>r.reserve_date)
+group by part_name
+	</select>
+	<!-- 예약 누적,일별 -->
+	<select id="findToReserveCount_total" resultMap="pieList2">
+	select reserve_date,count(reservenum) as reservenum from 
+	(select r.reservenum,p.partnum,p.part_name,r.reserve_date,r.id,d.doctornum from part p,reserve r,doctor d where r.doctornum=d.doctornum and d.partnum=p.partnum)
+	group by reserve_date order by reserve_date
+	</select>
+	
+	<select id="canReserve" parameterClass="reserve" resultClass="int">
+	select count(*) from reserve where doctornum=#doctornum# and reserve_date=#reserve_date# and str_time=#str_time#
+	</select>
+</sqlMap>

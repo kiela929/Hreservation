@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 이름 짓는 규칙-> web.xml에서 서블릿 이름을 가지고 짓는데, name-servlet.xml로 짓는것! 
+현재는 이름이 spring으로 되어있기 때문에 spring-servlet.xml로 지은것! -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd"
+	>
+	
+
+	<!-- 
+	<bean id="before" class="test.aop.Advice"/>
+	
+	<aop:config>
+	<aop:pointcut expression="execution(public * test.aop..*(..))" id="pc"/>
+	
+		<aop:aspect id="beforeadvice" ref="before"> 
+			<aop:before method="before" pointcut-ref="pc"/>
+		</aop:aspect>
+		
+		<aop:aspect id="afteradvice" ref="before">
+			<aop:after method="after" pointcut-ref="pc"/>
+		</aop:aspect>
+		
+		<aop:aspect id="afterReturningadvice" ref="before">
+			<aop:after-returning method="afterReturning" pointcut-ref="pc"/>
+		</aop:aspect>
+		
+		<aop:aspect id="afterThrowingadvice" ref="before">
+			<aop:after-throwing method="afterThrowing" pointcut-ref="pc"/>
+		</aop:aspect> -->
+		<!--  
+		<aop:aspect id="aroundadvice" ref="before">
+			<aop:around method="round" pointcut-ref="pc"/>
+		</aop:aspect>
+		-->
+	<!-- </aop:config>
+	
+	<bean id="main" class="test.aop.Main" />
+	 -->
+	 
+	 <bean id="join" class="reserve.join.JoinBean"/>
+ 
+	  <bean id="reserve" class="reserve.reserve.ReserveBean"/>
+   <bean id="main" class="reserve.main.MainBean"/>
+      <bean id="chart" class="reserve.chart.ChartBean"/>
+      
+	</beans>
+
+ 

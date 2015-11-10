@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC '-//ibatis.apache.org//DTD Sql Map 2.0//EN' 'http://ibatis.apache.org/dtd/sql-map-2.dtd'>
+
+<sqlMap>
+
+
+<!-- 	<typeAlias alias="dto" type="mvc.bean.DTO"/> -->
+	<typeAlias alias="member" type="reserve.join.MemberDTO"/>
+	<typeAlias alias="doctor" type="reserve.join.DoctorDTO"/>
+	<typeAlias alias="mail" type="reserve.join.MailDTO"/>
+	<typeAlias alias="reserve_date" type="reserve.reserve.ReserveDTO"/>
+	
+		<resultMap class="mail" id="mailList">
+	
+	<result property="id" column="id"/>
+	<result property="name" column="name"/>
+	<result property="jumin1" column="jumin1"/>
+	<result property="jumin2" column="jumin2"/>
+	<result property="age" column="age"/>
+
+	<result property="phone1" column="phone1"/>
+	<result property="phone2" column="phone2"/>
+	<result property="phone3" column="phone3"/>
+	<result property="postnum1" column="postnum1"/>
+	<result property="postnum2" column="postnum2"/>
+	<result property="post1" column="post1"/>
+	<result property="post2" column="post2"/>
+	<result property="email" column="email"/>
+	<result property="grade" column="grade"/>
+	
+	<result property="reservenum" column="reservenum"/>
+	<result property="id" column="id"/>
+	<result property="doctornum" column="doctornum"/>
+	<result property="reserve_date" column="reserve_date"/>
+	<result property="str_time" column="str_time"/>
+	</resultMap>	
+	<!--	
+	<select id="userCheck" resultClass="int" parameterClass="dto">
+		select count(*) from member where id=#id# and passwd=#passwd#
+	</select>
+	  -->
+	
+	<insert id="joinMember" parameterClass="member">
+	insert into member (id,pw,name,jumin1,jumin2,age,phone1,phone2,phone3,postnum1,postnum2,post1,post2,email,grade) 
+	values(#id#,#pw#,#name#,#jumin1#,#jumin2#,#age#,#phone1#,#phone2#,#phone3#,#postnum1#,#postnum2#,#post1#,#post2#,#email#,#grade#)
+	</insert>	
+		<insert id="joinMember_doctor" parameterClass="doctor">
+	insert into member (id,pw,name,jumin1,jumin2,age,phone1,phone2,phone3,postnum1,postnum2,post1,post2,email,grade) 
+	values(#id#,#pw#,#name#,#jumin1#,#jumin2#,#age#,#phone1#,#phone2#,#phone3#,#postnum1#,#postnum2#,#post1#,#post2#,#email#,#grade#)
+	</insert>	
+	
+	<insert id="joinDoctor" parameterClass="doctor">
+		insert into doctor (doctornum,id,partnum) 
+	values(doctornum_seq.nextval,#id#,#partnum#)
+	</insert>
+	
+	
+	<select id="havaMember" parameterClass="String" resultClass="String">
+	select pw from member where id=#id#
+	</select>
+	<select id="havaMemberID" parameterClass="String" resultClass="int">
+	select count(*) from member where id=#id#
+	</select>
+	<select id="findMember" parameterClass="String" resultClass="member">
+	select * from member where id=#id#
+	</select>
+	
+	<select id="findDoctor" parameterClass="int" resultClass="doctor">
+	select * from doctor where doctornum=#doctornum#
+	</select>
+	
+	
+	<select id="findDoctorAndPart" parameterClass="int" resultClass="doctor">
+	select * from doctor,part where doctor.partnum=part.partnum and doctornum=#doctornum#
+	</select>
+	<select id="findGrade" parameterClass="String" resultClass="int">
+	select grade from member where id=#id#
+	</select>
+	
+	
+	
+	<select id="today" parameterClass="reserve_date" resultClass="int">
+	select count(today) from mail where today=#reserve_date#
+	</select>
+	
+	<insert id="todayInsert" parameterClass="reserve_date">
+	insert into mail (today) values (#reserve_date#) 
+	</insert>
+
+	<select id="today_reserve" parameterClass="reserve_date" resultMap="mailList">
+	select r.reservenum,r.id,r.doctornum,r.reserve_date,r.str_time,r.reg_date,
+	m.name,m.jumin1,m.jumin2,m.age,m.phone1,m.phone2,m.phone3,m.postnum1,m.postnum2,
+	m.post1,m.post2,m.email,m.grade 
+	from reserve r,member m where r.id=m.id and r.reserve_date=#reserve_date#
+	</select>
+</sqlMap>
+
