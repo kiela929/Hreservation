@@ -1,8 +1,8 @@
-<%@ page contentType="text/html; charset=EUC-KR" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <center>
-<h2>³ªÀÇ ¿¹¾àÇöÈ²</h2>
+<h2>ë‚˜ì˜ ì˜ˆì•½í˜„í™©</h2>
 <hr width="1000" color="EEEEE"><br/><br/>
 </center>
 <head>
@@ -34,7 +34,7 @@ $(document).ready(function() {
 <body> 
  	<c:if test="${requestScope.totalCount == 0}">
  		<center>
-  		¿¹¾à³»¿ëÀÌ ¾ø½À´Ï´Ù.<br/><br/>
+  		ì˜ˆì•½ë‚´ìš©ì´ ì—†ìŠµë‹ˆë‹¤.<br/><br/>
 	    </center>
   		
   	</c:if>
@@ -45,15 +45,15 @@ $(document).ready(function() {
 	<table class="tablesorter" width="850" cellpadding="0" cellspacing="0" align="center">
 	        <thead align="center"> 
 	    <tr height="30" align="center"> 
-	      <th align="center"  width="130" bgcolor="#DDE787" >¿¹¾à¹øÈ£</th> 
+	      <th align="center"  width="130" bgcolor="#DDE787" >ì˜ˆì•½ë²ˆí˜¸</th> 
 	      <th align="center"  width="150" bgcolor="#FFF685">ID</th>
-	      <th align="center"  width="150"  bgcolor="#DDE787">¿¹¾à³¯Â¥</th>
-	      <th align="center"  width="150" bgcolor="#FFF685">¿¹¾à½Ã°£</th>
-	      <th align="center"  width="180"  bgcolor="#DDE787">´ã´çÀÇÄÚµå</th>
-	      <th align="center"  width="150" bgcolor="#FFF685">´ã´çÀÇ</th>
-	      <th align="center"  width="220"  bgcolor="#DDE787">´ã´çÀÇ¿¬¶ôÃ³</th>
-	      <th align="center"  width="150" bgcolor="#FFF685">Áø·á°ú</th> 
-	      <th align="center"  width="150"  bgcolor="#DDE787">µî·Ï³¯Â¥</th>
+	      <th align="center"  width="150"  bgcolor="#DDE787">ì˜ˆì•½ë‚ ì§œ</th>
+	      <th align="center"  width="150" bgcolor="#FFF685">ì˜ˆì•½ì‹œê°„</th>
+	      <th align="center"  width="180"  bgcolor="#DDE787">ë‹´ë‹¹ì˜ì½”ë“œ</th>
+	      <th align="center"  width="150" bgcolor="#FFF685">ë‹´ë‹¹ì˜</th>
+	      <th align="center"  width="220"  bgcolor="#DDE787">ë‹´ë‹¹ì˜ì—°ë½ì²˜</th>
+	      <th align="center"  width="150" bgcolor="#FFF685">ì§„ë£Œê³¼</th> 
+	      <th align="center"  width="150"  bgcolor="#DDE787">ë“±ë¡ë‚ ì§œ</th>
 	      <th align="center"  width="150"></th>
 	    </tr>
 	       </thead> 
@@ -72,7 +72,7 @@ $(document).ready(function() {
 			    </td>
 			     
 			     	<td align="center" bgcolor="#FFFCD7">
-		    	<font size="2">${list.str_time }½Ã</font>
+		    	<font size="2">${list.str_time }ì‹œ</font>
 			    </td>
 			    
 			    	<td align="center" bgcolor="#F2F6D5" >

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 
     <link class="include" rel="stylesheet" type="text/css" href="../jsChart/jquery.jqplot.min.css" />
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>

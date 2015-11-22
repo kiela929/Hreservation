@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 
 <center>  
-<input type="button" value="ÀÌ¹ø´Þ ¿¹¾à¼ö - ¿øÇü" onclick="javascript:window.location='pieChart.do'"/>
-<input type="button" value="ÀÌ¹ø´Þ ¿¹¾à¼ö - ¸·´ëÇü" onclick="javascript:window.location='barChart.do'"/>
-<input type="button" value="´©Àû ¿¹¾à¼ö" onclick="javascript:window.location='barMonthChart.do'"/>
+<input type="button" value="ì´ë²ˆë‹¬ ì˜ˆì•½ìˆ˜ - ì›í˜•" onclick="javascript:window.location='pieChart.do'"/>
+<input type="button" value="ì´ë²ˆë‹¬ ì˜ˆì•½ìˆ˜ - ë§‰ëŒ€í˜•" onclick="javascript:window.location='barChart.do'"/>
+<input type="button" value="ëˆ„ì  ì˜ˆì•½ìˆ˜" onclick="javascript:window.location='barMonthChart.do'"/>
 
 </center>
   

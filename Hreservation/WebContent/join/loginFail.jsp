@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 
     
-    <h2>·Î±×ÀÎ ½ÇÆÐ</h2>
+    <h2>ë¡œê·¸ì¸ ì‹¤íŒ¨</h2>
     ${check }
     <form>
-    <input type="button" value="µÚ·Î°¡±â " onClick="javascript:history.go(-1);"/>
+    <input type="button" value="ë’¤ë¡œê°€ê¸° " onClick="javascript:history.go(-1);"/>
     </form>

@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<title>¿¹¾àÇÏ±â</title>
+<title>ì˜ˆì•½í•˜ê¸°</title>
 
 <head>
 <script src="js/jquery-1.11.2.min.js"></script>
@@ -13,16 +13,16 @@ function sub(){
  $.ajax({   
   type: "POST",  
   url: "reserveSelect.do",   
-  data: "region="+x,   //&a=xxx ½ÄÀ¸·Î µÚ¿¡ ´õ ºÙÀÌ¸é µÊ
-  success: result    //function result ¸¦ ÀÇ¹ÌÇÔ
+  data: "region="+x,   //&a=xxx ì‹ìœ¼ë¡œ ë’¤ì— ë” ë¶™ì´ë©´ ë¨
+  success: result    //function result ë¥¼ ì˜ë¯¸í•¨
    }
  );
 }
 function result(msg){
- //sub()°¡ ½ÇÇàµÇ¸é °á°ú °ªÀ» °¡Áö°í ¿Í¼­ action À» ÃëÇØÁÖ´Â callback ÇÔ¼ö
+ //sub()ê°€ ì‹¤í–‰ë˜ë©´ ê²°ê³¼ ê°’ì„ ê°€ì§€ê³  ì™€ì„œ action ì„ ì·¨í•´ì£¼ëŠ” callback í•¨ìˆ˜
  var sel  =  document.f.doctornum;
- $("#sp1").html(msg); //innerHTML À» ÀÌ·± ¹æ½ÄÀ¸·Î »ç¿ëÇÔ
- //id ´Â $("#id")   name ÀÇ °æ¿ì $("name") À¸·Î Á¢±ÙÇÔ
+ $("#sp1").html(msg); //innerHTML ì„ ì´ëŸ° ë°©ì‹ìœ¼ë¡œ ì‚¬ìš©í•¨
+ //id ëŠ” $("#id")   name ì˜ ê²½ìš° $("name") ìœ¼ë¡œ ì ‘ê·¼í•¨
 }
 </script>
 
@@ -38,18 +38,18 @@ $(function() {
 });</script>
 
 <style>
-td { color:#3f3f3f; font-family:"±¼¸²"; font-size:10pt; line-height:170%;}
-td a { color:#797979; font-family:"±¼¸²"; font-size:10pt; line-height:170% ; text-decoration: none; }
-td a:hover { color:#3366CC; font-family:"±¼¸²"; font-size:10pt; line-height:170% ; text-decoration: underline;}
-input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;background-color: #FFFFFF; border: 1 solid #999999}
+td { color:#3f3f3f; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:170%;}
+td a { color:#797979; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:170% ; text-decoration: none; }
+td a:hover { color:#3366CC; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:170% ; text-decoration: underline;}
+input {color:#000000; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:120%;background-color: #FFFFFF; border: 1 solid #999999}
 </style>
 
 </head>
 <form name="f" action="reservePro.do">
-<!-- ·Î±×ÀÎÁ¤º¸°¡Á®¿À±â, º¸¿©ÁÖ±â. 
-»ç¿ëÀÚ°¡ ÀÔ·ÂÇØ¾ß ÇÏ´Â ºÎºĞÀº ¿¹¾à ½Ã°£, ¿¹¾à °ú, ´ã´çÀÇ 
+<!-- ë¡œê·¸ì¸ì •ë³´ê°€ì ¸ì˜¤ê¸°, ë³´ì—¬ì£¼ê¸°. 
+ì‚¬ìš©ìê°€ ì…ë ¥í•´ì•¼ í•˜ëŠ” ë¶€ë¶„ì€ ì˜ˆì•½ ì‹œê°„, ì˜ˆì•½ ê³¼, ë‹´ë‹¹ì˜ 
 
-¼¼¼ÇÁ¤º¸ °¡Á®¿À±â ¾ÆÀÌµğ-->
+ì„¸ì…˜ì •ë³´ ê°€ì ¸ì˜¤ê¸° ì•„ì´ë””-->
 
 	<table border=0 width="600" align="center" height="350">	
 		<tr>
@@ -61,17 +61,17 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
     	  	</tr>
 			
 			<tr>	
-				<td bgcolor="#eeeee">¾ÆÀÌµğ</td>
+				<td bgcolor="#eeeee">ì•„ì´ë””</td>
 				<td>
 				 ${dto.id } <input type="hidden" name="id" value="${dto.id }"> 
 				</td>				
 			</tr>
 			
 			<tr>	
-				<td bgcolor="#eeeee">Áø·á°ú</td>
+				<td bgcolor="#eeeee">ì§„ë£Œê³¼</td>
 				<td>
 				 <select name="part_name" onchange="sub();">
-			    <option value="">Áø·á°ú</option>
+			    <option value="">ì§„ë£Œê³¼</option>
 				  <c:forEach var="partDTO" items="${partDTO}" varStatus="i">
 				  <option value=${partDTO.partnum }>${partDTO.part_name }</option>
 				  </c:forEach>
@@ -79,11 +79,11 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
 				</td>				
 			</tr>
 				<tr>	
-				<td bgcolor="#eeeee">´ã´çÀÇ</td>
+				<td bgcolor="#eeeee">ë‹´ë‹¹ì˜</td>
 				<td>
 				<span id="sp1">
 <select name="doctornum" >
-    <option value="">´ã´çÀÇ</option>
+    <option value="">ë‹´ë‹¹ì˜</option>
  
 </select>
 </span></td>				
@@ -91,21 +91,21 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
 			
 			
 			<tr>	
-				<td bgcolor="#eeeee">³¯Â¥</td>
+				<td bgcolor="#eeeee">ë‚ ì§œ</td>
 				<td>
 			<input type="text" id="testDatepicker" name="reserve_date"><br/>
 				</td>				
 			</tr>
 			
 			<tr>	
-				<td bgcolor="#eeeee">½Ã°£</td>
+				<td bgcolor="#eeeee">ì‹œê°„</td>
 				<td>
 			<select name="str_time">
 <c:forEach var="time" begin="9" end="11" step="1">
-<option value=${time }> ${time }½Ã</option>
+<option value=${time }> ${time }ì‹œ</option>
 </c:forEach>
 <c:forEach var="time" begin="13" end="17" step="1">
-<option value=${time }> ${time }½Ã</option>
+<option value=${time }> ${time }ì‹œ</option>
 </c:forEach>
 </select>	</td>				
 			</tr>
@@ -116,8 +116,8 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
 			<tr>	
 				<td colspan="2" align="right">
 				
-<input type="submit" value="¿¹¾àÇÏ±â">
-<input type="button" value="Ãë¼Ò"  onClick="javascript:history.go(-1);"/>
+<input type="submit" value="ì˜ˆì•½í•˜ê¸°">
+<input type="button" value="ì·¨ì†Œ"  onClick="javascript:history.go(-1);"/>
 
 </td>
 			</tr>

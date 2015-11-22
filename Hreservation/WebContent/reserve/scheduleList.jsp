@@ -1,8 +1,8 @@
-<%@ page contentType="text/html; charset=EUC-KR" %>
+<%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <center>
-<h2>������Ȳ</h2>
+<h2>예약현황</h2>
 <hr width="1000" color="EEEEE"><br/><br/>
 </center>
 <head>
@@ -34,7 +34,7 @@ $(document).ready(function() {
 <body> 
  	<c:if test="${requestScope.totalCount == 0}">
  		<center>
-  		���೻���� �����ϴ�.<br/><br/>
+  		예약내용이 없습니다.<br/><br/>
 	    </center>
   		
   	</c:if>
@@ -45,15 +45,15 @@ $(document).ready(function() {
 	<table class="tablesorter" width="850" cellpadding="0" cellspacing="0" align="center">
 	        <thead align="center"> 
 	    <tr height="30" align="center"> 
-	      <th align="center"  width="130" bgcolor="#DDE787" >�����ȣ</th> 
+	      <th align="center"  width="130" bgcolor="#DDE787" >예약번호</th> 
 	      <th align="center"  width="150" bgcolor="#FFF685">ID</th>
-	      <th align="center"  width="150" bgcolor="#DDE787">�̸�</th>
-	      <th align="center"  width="150"  bgcolor="#FFF685">���೯¥</th>
-	      <th align="center"  width="150" bgcolor="#DDE787">����ð�</th>
-	      <th align="center"  width="180"  bgcolor="#FFF685">����</th>
-	      <th align="center"  width="250" bgcolor="#DDE787">�ֹε�Ϲ�ȣ</th>
-	      <th align="center"  width="250"  bgcolor="#FFF685">����ó</th>
-	      <th align="center"  width="150" bgcolor="#DDE787">��ϳ�¥</th> 
+	      <th align="center"  width="150" bgcolor="#DDE787">이름</th>
+	      <th align="center"  width="150"  bgcolor="#FFF685">예약날짜</th>
+	      <th align="center"  width="150" bgcolor="#DDE787">예약시간</th>
+	      <th align="center"  width="180"  bgcolor="#FFF685">나이</th>
+	      <th align="center"  width="250" bgcolor="#DDE787">주민등록번호</th>
+	      <th align="center"  width="250"  bgcolor="#FFF685">연락처</th>
+	      <th align="center"  width="150" bgcolor="#DDE787">등록날짜</th> 
 	    </tr>
 	       </thead> 
 	           <tbody> 
@@ -75,7 +75,7 @@ $(document).ready(function() {
 			    </td>
 			     
 			     	<td align="center" bgcolor="#F2F6D5">
-		    	<font size="2">${list.str_time }��</font>
+		    	<font size="2">${list.str_time }시</font>
 			    </td>
 			    
 			    	<td align="center" bgcolor="#FFFCD7" >

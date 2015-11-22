@@ -1,52 +1,52 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<title>È¸¿ø°¡ÀÔÆû</title>
+<title>íšŒì›ê°€ì…í¼</title>
 <script>
 function checkIt() {
     var userinput = eval("document.joinForm");
     if(!userinput.id.value) {
-        alert("ID¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+        alert("IDë¥¼ ì…ë ¥í•˜ì„¸ìš”");
         return false;
     }
-    //Áßº¹È®ÀÎÀ» ´©¸£Áö ¾Ê¾ÒÀ» °æ¿ì °æ°íÃ¢
+    //ì¤‘ë³µí™•ì¸ì„ ëˆ„ë¥´ì§€ ì•Šì•˜ì„ ê²½ìš° ê²½ê³ ì°½
     if(!userinput.confirm_id.value) {
-        alert("ID Áßº¹È®ÀÎÀ» ÇØÁÖ¼¼¿ä");
+        alert("ID ì¤‘ë³µí™•ì¸ì„ í•´ì£¼ì„¸ìš”");
         return false;
     }
     
     if(!userinput.pw.value ) {
-        alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+        alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
         return false;
     }
     
     if(userinput.pw.value != userinput.pw1.value)
     {
-        alert("ºñ¹Ğ¹øÈ£¸¦ µ¿ÀÏÇÏ°Ô ÀÔ·ÂÇÏ¼¼¿ä");
+        alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ë™ì¼í•˜ê²Œ ì…ë ¥í•˜ì„¸ìš”");
         return false;
     }
    
     if(!userinput.name.value) {
-        alert("»ç¿ëÀÚ ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä");
+        alert("ì‚¬ìš©ì ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš”");
         return false;
     }
     
     if(!userinput.postnum1.value  || !userinput.postnum2.value  || !userinput.post1.value || !userinput.post2.value)
     {
-        alert("ÁÖ¼Ò¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+        alert("ì£¼ì†Œë¥¼ ì…ë ¥í•˜ì„¸ìš”");
         return false;
     }
     
     if(!userinput.phone2.value || !userinput.phone3.value)
     {
-        alert("ÇÚµåÆù¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+        alert("í•¸ë“œí°ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
         return false;
     }
     
     if(!userinput.email.value )
     {
-        alert("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇÏ¼¼¿ä");
+        alert("ì´ë©”ì¼ì„ ì…ë ¥í•˜ì„¸ìš”");
         return false;
     }
     
@@ -56,26 +56,26 @@ function checkIt() {
 
 
 
-// ¾ÆÀÌµğ Áßº¹ ¿©ºÎ¸¦ ÆÇ´Ü
+// ì•„ì´ë”” ì¤‘ë³µ ì—¬ë¶€ë¥¼ íŒë‹¨
 function openConfirmid(userinput) {
-    // ¾ÆÀÌµğ¸¦ ÀÔ·ÂÇß´ÂÁö °Ë»ç
+    // ì•„ì´ë””ë¥¼ ì…ë ¥í–ˆëŠ”ì§€ ê²€ì‚¬
     if (userinput.id.value == "") {
-        alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+        alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
         return;
     }
-    // url°ú »ç¿ëÀÚ ÀÔ·Â id¸¦ Á¶ÇÕÇÕ´Ï´Ù.
+    // urlê³¼ ì‚¬ìš©ì ì…ë ¥ idë¥¼ ì¡°í•©í•©ë‹ˆë‹¤.
     url = "confirmId.do?id=" + userinput.id.value;
-                       //get¹æ½ÄÀ¸·Î ÁÙ¶§ ÆÄ¶ó¹ÌÅÍ °ª = ?
-    // »õ·Î¿î À©µµ¿ì¸¦ ¿±´Ï´Ù.
+                       //getë°©ì‹ìœ¼ë¡œ ì¤„ë•Œ íŒŒë¼ë¯¸í„° ê°’ = ?
+    // ìƒˆë¡œìš´ ìœˆë„ìš°ë¥¼ ì—½ë‹ˆë‹¤.
     open(url, "confirm", 
     "toolbar=no, location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300, height=200");
 }
 </script>
 <style>
-td { color:#3f3f3f; font-family:"±¼¸²"; font-size:10pt; line-height:170%;}
-td a { color:#797979; font-family:"±¼¸²"; font-size:10pt; line-height:170% ; text-decoration: none; }
-td a:hover { color:#3366CC; font-family:"±¼¸²"; font-size:10pt; line-height:170% ; text-decoration: underline;}
-input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;background-color: #FFFFFF; border: 1 solid #999999}
+td { color:#3f3f3f; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:170%;}
+td a { color:#797979; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:170% ; text-decoration: none; }
+td a:hover { color:#3366CC; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:170% ; text-decoration: underline;}
+input {color:#000000; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:120%;background-color: #FFFFFF; border: 1 solid #999999}
 </style>
 
 	<form action="doctorJoinPro.do" name="joinForm" >
@@ -89,41 +89,41 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
       			<td height="1" colspan="2"></td>
     	  	</tr>
 			<tr>	
-				<td bgcolor="#eeeee">¾ÆÀÌµğ</td>
+				<td bgcolor="#eeeee">ì•„ì´ë””</td>
 				<td>
 				<input type="text" name="id" />
-				<input type="button" name="confirm_id" OnClick="openConfirmid(this.form)" value="Áßº¹È®ÀÎ" maxlength="16">
+				<input type="button" name="confirm_id" OnClick="openConfirmid(this.form)" value="ì¤‘ë³µí™•ì¸" maxlength="16">
 					
 				</td>				
 			</tr>
 			
 			<tr>	
-				<td bgcolor="#eeeee">ºñ¹Ğ¹øÈ£</td> 
+				<td bgcolor="#eeeee">ë¹„ë°€ë²ˆí˜¸</td> 
 				<td>
 					<input type="password" name="pw"  /><br/>
 				</td>
 			</tr>
 			<tr>
-				<td bgcolor="#eeeee">ºñ¹Ğ¹øÈ£È®ÀÎ</td>
+				<td bgcolor="#eeeee">ë¹„ë°€ë²ˆí˜¸í™•ì¸</td>
 				<td>
 					<input type="password" name="pw1" /><br/>
 				</td>
 			</tr>
 			
 			<tr>	
-				<td bgcolor="#eeeee">ÀÌ¸§</td>
+				<td bgcolor="#eeeee">ì´ë¦„</td>
 				<td>
 					<input type="text" name="name"  />
 				</td>
 			</tr>
 			<tr>	
-				<td bgcolor="#eeeee">ÁÖ¹Îµî·Ï¹øÈ£</td> <td><input type="text" name="jumin1"  size="10"/> - 
+				<td bgcolor="#eeeee">ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸</td> <td><input type="text" name="jumin1"  size="10"/> - 
 				<input type="text" name="jumin2"  size="10"/> 
 						  		</td>
 			</tr>
 			
 					<tr>	
-				<td bgcolor="#eeeee">³ªÀÌ</td> 
+				<td bgcolor="#eeeee">ë‚˜ì´</td> 
 				<td> <input type="text" name="age"/>
 								
 						  		</td>
@@ -131,7 +131,7 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
 			
 	
 			<tr>	
-				<td bgcolor="#eeeee">ÀüÈ­¹øÈ£</td> <td><select name="phone1">
+				<td bgcolor="#eeeee">ì „í™”ë²ˆí˜¸</td> <td><select name="phone1">
 									   <option value="010">010</option>
 									   <option value="011">011</option>
 									   <option value="016">016</option>
@@ -143,7 +143,7 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
 							  </td>
 			</tr>
 			<tr>	
-				<td bgcolor="#eeeee">ÀÌ¸ŞÀÏ</td> <td><input type="text" name="email" size="25" />											  				  
+				<td bgcolor="#eeeee">ì´ë©”ì¼</td> <td><input type="text" name="email" size="25" />											  				  
 								 
 							  </td>
 			</tr>
@@ -151,11 +151,11 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
 			
 		
 			<tr>	
-				<td bgcolor="#eeeee">ÁÖ¼Ò</td>	<td><input type="text" id="sample6_postcode1" size="5" name="postnum1"   /> -
+				<td bgcolor="#eeeee">ì£¼ì†Œ</td>	<td><input type="text" id="sample6_postcode1" size="5" name="postnum1"   /> -
 				<input type="text" id="sample6_postcode2" size="5" name="postnum2"  />
-				<input type="button" onclick="sample6_execDaumPostcode()" value="¿ìÆí¹øÈ£ Ã£±â"/><br/>
-				<input type="text" id="sample6_address" placeholder="ÁÖ¼Ò" name="post1" />
-				<input type="text" id="sample6_address2" placeholder="»ó¼¼ÁÖ¼Ò" name="post2" />
+				<input type="button" onclick="sample6_execDaumPostcode()" value="ìš°í¸ë²ˆí˜¸ ì°¾ê¸°"/><br/>
+				<input type="text" id="sample6_address" placeholder="ì£¼ì†Œ" name="post1" />
+				<input type="text" id="sample6_address2" placeholder="ìƒì„¸ì£¼ì†Œ" name="post2" />
 				
 				
 				<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -163,41 +163,41 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
 				    function sample6_execDaumPostcode() {
 				        new daum.Postcode({
 				            oncomplete: function(data) {
-				                // ÆË¾÷¿¡¼­ °Ë»ö°á°ú Ç×¸ñÀ» Å¬¸¯ÇßÀ»¶§ ½ÇÇàÇÒ ÄÚµå¸¦ ÀÛ¼ºÇÏ´Â ºÎºĞ.
+				                // íŒì—…ì—ì„œ ê²€ìƒ‰ê²°ê³¼ í•­ëª©ì„ í´ë¦­í–ˆì„ë•Œ ì‹¤í–‰í•  ì½”ë“œë¥¼ ì‘ì„±í•˜ëŠ” ë¶€ë¶„.
 				
-				                // °¢ ÁÖ¼ÒÀÇ ³ëÃâ ±ÔÄ¢¿¡ µû¶ó ÁÖ¼Ò¸¦ Á¶ÇÕÇÑ´Ù.
-				                // ³»·Á¿À´Â º¯¼ö°¡ °ªÀÌ ¾ø´Â °æ¿ì¿£ °ø¹é('')°ªÀ» °¡Áö¹Ç·Î, ÀÌ¸¦ Âü°íÇÏ¿© ºĞ±â ÇÑ´Ù.
-				                var fullAddr = ''; // ÃÖÁ¾ ÁÖ¼Ò º¯¼ö
-				                var extraAddr = ''; // Á¶ÇÕÇü ÁÖ¼Ò º¯¼ö
+				                // ê° ì£¼ì†Œì˜ ë…¸ì¶œ ê·œì¹™ì— ë”°ë¼ ì£¼ì†Œë¥¼ ì¡°í•©í•œë‹¤.
+				                // ë‚´ë ¤ì˜¤ëŠ” ë³€ìˆ˜ê°€ ê°’ì´ ì—†ëŠ” ê²½ìš°ì—” ê³µë°±('')ê°’ì„ ê°€ì§€ë¯€ë¡œ, ì´ë¥¼ ì°¸ê³ í•˜ì—¬ ë¶„ê¸° í•œë‹¤.
+				                var fullAddr = ''; // ìµœì¢… ì£¼ì†Œ ë³€ìˆ˜
+				                var extraAddr = ''; // ì¡°í•©í˜• ì£¼ì†Œ ë³€ìˆ˜
 				
-				                // »ç¿ëÀÚ°¡ ¼±ÅÃÇÑ ÁÖ¼Ò Å¸ÀÔ¿¡ µû¶ó ÇØ´ç ÁÖ¼Ò °ªÀ» °¡Á®¿Â´Ù.
-				                if (data.userSelectedType === 'R') { // »ç¿ëÀÚ°¡ µµ·Î¸í ÁÖ¼Ò¸¦ ¼±ÅÃÇßÀ» °æ¿ì
+				                // ì‚¬ìš©ìê°€ ì„ íƒí•œ ì£¼ì†Œ íƒ€ì…ì— ë”°ë¼ í•´ë‹¹ ì£¼ì†Œ ê°’ì„ ê°€ì ¸ì˜¨ë‹¤.
+				                if (data.userSelectedType === 'R') { // ì‚¬ìš©ìê°€ ë„ë¡œëª… ì£¼ì†Œë¥¼ ì„ íƒí–ˆì„ ê²½ìš°
 				                    fullAddr = data.roadAddress;
 				
-				                } else { // »ç¿ëÀÚ°¡ Áö¹ø ÁÖ¼Ò¸¦ ¼±ÅÃÇßÀ» °æ¿ì(J)
+				                } else { // ì‚¬ìš©ìê°€ ì§€ë²ˆ ì£¼ì†Œë¥¼ ì„ íƒí–ˆì„ ê²½ìš°(J)
 				                    fullAddr = data.jibunAddress;
 				                }
 				
-				                // »ç¿ëÀÚ°¡ ¼±ÅÃÇÑ ÁÖ¼Ò°¡ µµ·Î¸í Å¸ÀÔÀÏ¶§ Á¶ÇÕÇÑ´Ù.
+				                // ì‚¬ìš©ìê°€ ì„ íƒí•œ ì£¼ì†Œê°€ ë„ë¡œëª… íƒ€ì…ì¼ë•Œ ì¡°í•©í•œë‹¤.
 				                if(data.userSelectedType === 'R'){
-				                    //¹ıÁ¤µ¿¸íÀÌ ÀÖÀ» °æ¿ì Ãß°¡ÇÑ´Ù.
+				                    //ë²•ì •ë™ëª…ì´ ìˆì„ ê²½ìš° ì¶”ê°€í•œë‹¤.
 				                    if(data.bname !== ''){
 				                        extraAddr += data.bname;
 				                    }
-				                    // °Ç¹°¸íÀÌ ÀÖÀ» °æ¿ì Ãß°¡ÇÑ´Ù.
+				                    // ê±´ë¬¼ëª…ì´ ìˆì„ ê²½ìš° ì¶”ê°€í•œë‹¤.
 				                    if(data.buildingName !== ''){
 				                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
 				                    }
-				                    // Á¶ÇÕÇüÁÖ¼ÒÀÇ À¯¹«¿¡ µû¶ó ¾çÂÊ¿¡ °ıÈ£¸¦ Ãß°¡ÇÏ¿© ÃÖÁ¾ ÁÖ¼Ò¸¦ ¸¸µç´Ù.
+				                    // ì¡°í•©í˜•ì£¼ì†Œì˜ ìœ ë¬´ì— ë”°ë¼ ì–‘ìª½ì— ê´„í˜¸ë¥¼ ì¶”ê°€í•˜ì—¬ ìµœì¢… ì£¼ì†Œë¥¼ ë§Œë“ ë‹¤.
 				                    fullAddr += (extraAddr !== '' ? ' ('+ extraAddr +')' : '');
 				                }
 				
-				                // ¿ìÆí¹øÈ£¿Í ÁÖ¼Ò Á¤º¸¸¦ ÇØ´ç ÇÊµå¿¡ ³Ö´Â´Ù.
+				                // ìš°í¸ë²ˆí˜¸ì™€ ì£¼ì†Œ ì •ë³´ë¥¼ í•´ë‹¹ í•„ë“œì— ë„£ëŠ”ë‹¤.
 				                document.getElementById("sample6_postcode1").value = data.postcode1;
 				                document.getElementById("sample6_postcode2").value = data.postcode2;
 				                document.getElementById("sample6_address").value = fullAddr;
 				
-				                // Ä¿¼­¸¦ »ó¼¼ÁÖ¼Ò ÇÊµå·Î ÀÌµ¿ÇÑ´Ù.
+				                // ì»¤ì„œë¥¼ ìƒì„¸ì£¼ì†Œ í•„ë“œë¡œ ì´ë™í•œë‹¤.
 				                document.getElementById("sample6_address2").focus();
 				            }
 				        }).open();
@@ -208,13 +208,13 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
 			 	
 			</tr>
 			<tr>
-			<td bgcolor="#eeeee">´ã´ç°ú</td> 
+			<td bgcolor="#eeeee">ë‹´ë‹¹ê³¼</td> 
 			<td>
 			<select name="partnum">
-	 <option value=1>¾È°ú</option>
-	  <option value=2>Ä¡°ú</option>
-	   <option value=3>¼Ò¾Æ°ú</option>
-	    <option value=4>Á¤Çü¿Ü°ú</option>
+	 <option value=1>ì•ˆê³¼</option>
+	  <option value=2>ì¹˜ê³¼</option>
+	   <option value=3>ì†Œì•„ê³¼</option>
+	    <option value=4>ì •í˜•ì™¸ê³¼</option>
 			</select>
 			
 								 
@@ -225,9 +225,9 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
 			
 			<tr>	
 				<td colspan="2" align="right">
-					<input type="submit" value="°¡ÀÔÇÏ±â"/>
-					<input type="reset" value="´Ù½ÃÀÔ·Â" />
-				<input type="button" value="Ãë¼Ò"  onClick="javascript:history.go(-1);"/>	</td>
+					<input type="submit" value="ê°€ì…í•˜ê¸°"/>
+					<input type="reset" value="ë‹¤ì‹œì…ë ¥" />
+				<input type="button" value="ì·¨ì†Œ"  onClick="javascript:history.go(-1);"/>	</td>
 			</tr>
 		</table>			
 	</form>	

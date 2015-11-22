@@ -1,15 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 
     
 <style>
-td { color:#3f3f3f; font-family:"±¼¸²"; font-size:10pt; line-height:170%;}
-td a { color:#797979; font-family:"±¼¸²"; font-size:10pt; line-height:170% ; text-decoration: none; }
-td a:hover { color:#3366CC; font-family:"±¼¸²"; font-size:10pt; line-height:170% ; text-decoration: underline;}
-input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;background-color: #FFFFFF; border: 1 solid #999999}
+td { color:#3f3f3f; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:170%;}
+td a { color:#797979; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:170% ; text-decoration: none; }
+td a:hover { color:#3366CC; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:170% ; text-decoration: underline;}
+input {color:#000000; font-family:"êµ´ë¦¼"; font-size:10pt; line-height:120%;background-color: #FFFFFF; border: 1 solid #999999}
 </style>
-    <title>È¸¿øµî·Ï ¿Ï·á</title>
-    <h2>È¸¿øµî·Ï</h2>
+    <title>íšŒì›ë“±ë¡ ì™„ë£Œ</title>
+    <h2>íšŒì›ë“±ë¡</h2>
     <form>
     
     
@@ -22,61 +22,61 @@ input {color:#000000; font-family:"±¼¸²"; font-size:10pt; line-height:120%;backg
       			<td height="1" colspan="2"></td>
     	  	</tr>
 			<tr align="center">	
-				<td align="center" bgcolor="#eeeee">ÀÌ¸§</td>
+				<td align="center" bgcolor="#eeeee">ì´ë¦„</td>
 				<td>
 				${dto.name }
 				</td>				
 			</tr>
 				<tr align="center">	
-				<td align="center" bgcolor="#eeeee">¾ÆÀÌµğ</td>
+				<td align="center" bgcolor="#eeeee">ì•„ì´ë””</td>
 				<td>
 				${dto.id }
 				</td>				
 			</tr>
 				<tr align="center">	
-				<td  align="center" bgcolor="#eeeee">ÀÌ¸§</td>
+				<td  align="center" bgcolor="#eeeee">ì´ë¦„</td>
 				<td>
 				${dto.name }
 				</td>				
 			</tr>
 					<tr align="center">	
-				<td align="center" bgcolor="#eeeee">ÁÖ¹Îµî·Ï¹øÈ£</td>
+				<td align="center" bgcolor="#eeeee">ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸</td>
 				<td>
 		 ${dto.jumin1 }- ${dto.jumin2 }
 				</td>				
 			</tr>
 				<tr align="center">	
-				<td align="center" bgcolor="#eeeee">³ªÀÌ</td>
+				<td align="center" bgcolor="#eeeee">ë‚˜ì´</td>
 				<td>
 				${dto.age }
 				</td>				
 			</tr>
 					<tr align="center">	
-				<td align="center" bgcolor="#eeeee">ÀÌ¸ŞÀÏ</td>
+				<td align="center" bgcolor="#eeeee">ì´ë©”ì¼</td>
 				<td>
 			${dto.email }
 				</td>				
 			</tr>
 					<tr align="center">	
-				<td align="center" bgcolor="#eeeee">ÀüÈ­¹øÈ£</td>
+				<td align="center" bgcolor="#eeeee">ì „í™”ë²ˆí˜¸</td>
 				<td>
 				${dto.phone1 }-${dto.phone2 }-${dto.phone3 }
 				</td>				
 			</tr>
 				<tr align="center">	
-				<td align="center" bgcolor="#eeeee">ÁÖ¼Ò</td>
+				<td align="center" bgcolor="#eeeee">ì£¼ì†Œ</td>
 				<td>
 				${dto.post1} ${dto.post2 }
 				</td>				
 			</tr>
 				<tr align="center">	
-				<td align="center" bgcolor="#eeeee">¿ìÆí¹øÈ£</td>
+				<td align="center" bgcolor="#eeeee">ìš°í¸ë²ˆí˜¸</td>
 				<td>
 			${dto.postnum1 }-${dto.postnum2 }
 				</td>				
 			</tr>
 				<tr align="center">	
-				<td align="center" bgcolor="#eeeee">È¸¿øµî±Ş</td>
+				<td align="center" bgcolor="#eeeee">íšŒì›ë“±ê¸‰</td>
 				<td>
 			 ${dto.grade }
     

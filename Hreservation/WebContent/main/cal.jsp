@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
     
     
 
@@ -50,8 +50,8 @@ body {
 
 </style>
 </head>
-<title>¸ÞÀÎÆäÀÌÁö</title>
-<h2>¸ÞÀÎÀÔ´Ï´Ù.</h2>
+<title>ë©”ì¸íŽ˜ì´ì§€</title>
+<h2>ë©”ì¸ìž…ë‹ˆë‹¤.</h2>
   
 <div id='calendar'></div>
 

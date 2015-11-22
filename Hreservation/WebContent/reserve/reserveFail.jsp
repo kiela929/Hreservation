@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 
     <center>
-    <h2>¿¹¾à ½ÇÆÐ</h2>
-    ¿¹¾àÀÌ ÀÌ¹Ì ÀÖ½À´Ï´Ù. 
+    <h2>ì˜ˆì•½ ì‹¤íŒ¨</h2>
+    ì˜ˆì•½ì´ ì´ë¯¸ ìžˆìŠµë‹ˆë‹¤. 
     </center>

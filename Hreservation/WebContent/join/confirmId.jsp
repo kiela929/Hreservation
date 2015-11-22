@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -20,13 +20,13 @@ function openConfirmid(userinput) {
   function setid()
     {		
     	opener.document.joinForm.id.value='${id}';
-    	window.close();//Ã¢´İ±â
+    	window.close();//ì°½ë‹«ê¸°
 		}
 
 </script>
 
 <head>
-<title>ID Áßº¹È®ÀÎ</title>
+<title>ID ì¤‘ë³µí™•ì¸</title>
 
 <body>
 
@@ -35,7 +35,7 @@ function openConfirmid(userinput) {
 
 <table width="270" border="0" cellspacing="0" cellpadding="5">
   <tr> 
-    <td height="39" >${id}ÀÌ¹Ì »ç¿ëÁßÀÎ ¾ÆÀÌµğÀÔ´Ï´Ù.</td>
+    <td height="39" >${id}ì´ë¯¸ ì‚¬ìš©ì¤‘ì¸ ì•„ì´ë””ì…ë‹ˆë‹¤.</td>
   </tr>
 </table>
 
@@ -43,10 +43,10 @@ function openConfirmid(userinput) {
 <table width="270" border="0" cellspacing="0" cellpadding="5">
   <tr>
     <td align="center"> 
-       ´Ù¸¥ ¾ÆÀÌµğ¸¦ ¼±ÅÃÇÏ¼¼¿ä.<p>
+       ë‹¤ë¥¸ ì•„ì´ë””ë¥¼ ì„ íƒí•˜ì„¸ìš”.<p>
        <input type="text" size="10" maxlength="12" name="id"> 
        
-       <input type="submit" value="Áßº¹È®ÀÎ" maxlength="16">
+       <input type="submit" value="ì¤‘ë³µí™•ì¸" maxlength="16">
 				
     </td>
   </tr>
@@ -58,9 +58,9 @@ function openConfirmid(userinput) {
 <table width="270" border="0" cellspacing="0" cellpadding="5">
   <tr> 
     <td align="center"> 
-      <p>ÀÔ·ÂÇÏ½Å ${id} ´Â »ç¿ëÇÏ½Ç ¼ö <br/>
-   		  ÀÖ´Â IDÀÔ´Ï´Ù. </p>
-      <input type="button" value="´İ±â" onclick="setid()">
+      <p>ì…ë ¥í•˜ì‹  ${id} ëŠ” ì‚¬ìš©í•˜ì‹¤ ìˆ˜ <br/>
+   		  ìˆëŠ” IDì…ë‹ˆë‹¤. </p>
+      <input type="button" value="ë‹«ê¸°" onclick="setid()">
     </td>
   </tr>
 </table>

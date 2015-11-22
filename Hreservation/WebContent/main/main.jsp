@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 	
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <head>
-<!-- ·Îµù -->
+<!-- ë¡œë”© -->
    <link rel="stylesheet" type="text/css" title="default" href="css/main.css">
-<!-- end of ·Îµù -->
+<!-- end of ë¡œë”© -->
 <link rel="stylesheet" type="text/css" href="css/demo.css" />
 <link rel="stylesheet" type="text/css" href="css/style3.css" />
 <link
@@ -16,7 +16,7 @@
 
 <link href='js/fullcalendar.css' rel='stylesheet' />
 <link href='js/fullcalendar.print.css' rel='stylesheet' media='print' />
-<!-- ¸Þ´º¹Ù -->
+<!-- ë©”ë‰´ë°” -->
 
 <link rel="stylesheet" href="cssmenu/styles.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"
@@ -24,10 +24,10 @@
 <script src="cssmenu/script.js"></script>
 <!-- /// -->
 
-<!-- ·Îµù -->
+<!-- ë¡œë”© -->
   <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
   <script type="text/javascript" src="js/custom.js"></script>
-<!-- end of ·Îµù -->
+<!-- end of ë¡œë”© -->
 
 <script src='js/moment.min.js'></script>
 <script src='js/jquery.min.js'></script>
@@ -99,12 +99,12 @@ body {
 
 
 </head>
-<title>¸ÞÀÎÆäÀÌÁö</title>
+<title>ë©”ì¸íŽ˜ì´ì§€</title>
 
 <body>
-	<!-- ÀüÃ¼¸¦ °¨½Î´Â ÅÂ±× -->
+	<!-- ì „ì²´ë¥¼ ê°ì‹¸ëŠ” íƒœê·¸ -->
 	<div id="page-wrapper">
-		<!-- Çì´õ -->
+		<!-- í—¤ë” -->
 		<header id="main-header">
 			<!-- <hgroup > -->
 			<div align="center">
@@ -114,41 +114,41 @@ body {
 			<!-- <h2 class="master-description">K H &nbsp;a c a d e m y</h2>
 			<c:if test="true">
 			<div align="right">
-				<a href="javascript:location='template.action'"><font color="#D4D4D4"><h3>È¨À¸·Î ³ª°¡±â</h3></font></a>
+				<a href="javascript:location='template.action'"><font color="#D4D4D4"><h3>í™ˆìœ¼ë¡œ ë‚˜ê°€ê¸°</h3></font></a>
 			<br/>
-			<font color=#FA1F5B>ÇöÀç °ü¸®ÀÚ·Î ·Î±×ÀÎ ÁßÀÔ´Ï´Ù.
+			<font color=#FA1F5B>í˜„ìž¬ ê´€ë¦¬ìžë¡œ ë¡œê·¸ì¸ ì¤‘ìž…ë‹ˆë‹¤.
 			</font>
 	</div>
 	</c:if> -->
 			<!--  </hgroup>-->
 		</header>
-		<!-- ³×ºñ°ÔÀÌ¼Ç -->
+		<!-- ë„¤ë¹„ê²Œì´ì…˜ -->
 		<nav id="main-navigation">
 
 			<div id='cssmenu' style="padding-top: 30px;">
 				<ul>
 					<li class='active'><a href=javascript:location='main.do'>Home</a></li>
-					<c:if test="${id==null}"><!-- ·Î±×ÀÎ ¾ÈµÈ »óÅÂ -->
+					<c:if test="${id==null}"><!-- ë¡œê·¸ì¸ ì•ˆëœ ìƒíƒœ -->
 					<li><a href=javascript:location='login.do'>Login</a></li>
 					<li><a href=javascript:location='login.do'>Reservation</a></li>
 					<li><a href=javascript:location='login.do'>MyPage</a></li>
 					</c:if>
 					
-					<c:if test="${id!=null}"><!-- ·Î±×ÀÎ µÈ »óÅÂ -->
+					<c:if test="${id!=null}"><!-- ë¡œê·¸ì¸ ëœ ìƒíƒœ -->
 					<li><a href=javascript:location='logout.do'>Logout</a></li>
 				
 					
-					<c:if test="${grade eq 3}"> <!-- È¸¿øÀÌ¸é -->
+					<c:if test="${grade eq 3}"> <!-- íšŒì›ì´ë©´ -->
 					<li><a href=javascript:location='reserve.do'>Reservation</a></li>
 					<li><a href='myReserveList.do'>MyPage</a></li>
 					</c:if>
 					
-					<c:if test="${grade eq 1 }"> <!-- °ü¸®ÀÚÀÌ¸é -->
+					<c:if test="${grade eq 1 }"> <!-- ê´€ë¦¬ìžì´ë©´ -->
 					<li><a href=javascript:location='doctorJoin.do'>enroll</a></li>
 					<li><a href=javascript:location='chartMain.do'>Chart</a></li>
 					</c:if>
 					
-					<c:if test="${grade eq 2 }"> <!-- ÀÇ»çÀÌ¸é -->
+					<c:if test="${grade eq 2 }"> <!-- ì˜ì‚¬ì´ë©´ -->
 					<li><a href=javascript:location='scheduleList.do'>schedule</a></li>
 					<li><a href=javascript:location='chartMain.do'>Chart</a></li>
 					</c:if>
@@ -159,24 +159,24 @@ body {
 			</div>
 
 			<div class="pull-right">
-				<!-- ¸Þ´º ¿À¸¥ÂÊ -->
+				<!-- ë©”ë‰´ ì˜¤ë¥¸ìª½ -->
 			</div>
 		</nav>
-		<!-- º»¹® -->
+		<!-- ë³¸ë¬¸ -->
 		<div id="content">
-			<!-- º»¹® ÁÂÃø ¿µ¿ª-³»¿ëºÎºÐ -->
+			<!-- ë³¸ë¬¸ ì¢Œì¸¡ ì˜ì—­-ë‚´ìš©ë¶€ë¶„ -->
 
 			<section id="main-section">
 				<div class="pull-left">
 					<!-- 		 <ul class="mh-menu">
-				<li><a href="#"><span>Login</span> <span>·Î±×ÀÎ</span></a><img src="images/1.jpg" alt="image01"/></li>
-				<li><a href="#"><span>Reservation</span> <span>Áø·á¿¹¾à</span></a><img src="images/2.jpg" alt="image02"/></li>
-				<li><a href="#"><span>Calendar</span> <span>¿¹¾àÇöÈ²º¸±â</span></a><img src="images/3.jpg" alt="image03"/></li>
-				<li><a href="#"><span>Contact us</span> <span>¿À½Ã´Â ±æ</span></a><img src="images/4.jpg" alt="image04"/></li>
+				<li><a href="#"><span>Login</span> <span>ë¡œê·¸ì¸</span></a><img src="images/1.jpg" alt="image01"/></li>
+				<li><a href="#"><span>Reservation</span> <span>ì§„ë£Œì˜ˆì•½</span></a><img src="images/2.jpg" alt="image02"/></li>
+				<li><a href="#"><span>Calendar</span> <span>ì˜ˆì•½í˜„í™©ë³´ê¸°</span></a><img src="images/3.jpg" alt="image03"/></li>
+				<li><a href="#"><span>Contact us</span> <span>ì˜¤ì‹œëŠ” ê¸¸</span></a><img src="images/4.jpg" alt="image04"/></li>
 			</ul>  -->
 				</div>
 			</section>
-			<!-- 	º»¹® ¿ìÃø ¿µ¿ª -->
+			<!-- 	ë³¸ë¬¸ ìš°ì¸¡ ì˜ì—­ -->
 			<aside id="main-aside" style="padding: 30 30 30 30">
 				<c:choose>
 					<c:when test="${BODY_PATH==null }">
@@ -190,16 +190,16 @@ body {
 
 			</aside>
 		</div>
-		<!-- ¹Ø -->
+		<!-- ë°‘ -->
 		<footer id="main-footer">
 		<!-- 	</br>
 			</br>
 			</br>
 			</br>
 			<div align="center">
-				¼­¿ï ÇÞºûº´¿ø / ¼­¿ï½Ã ¿µµîÆ÷±¸ 249-33 / ÀüÈ­¹øÈ£ : 02-2680-6523~7 / ÆÑ½º :
-				02-2680-6531<br /> °æ±â ÇÞºûº´¿ø / °æ±âµµ ±¤¸í½Ã Ã¶»ê·Î 56 / ÀüÈ­¹øÈ£ : 02-2680-6820 /
-				ÆÑ½º : 02-2680-6826</br>
+				ì„œìš¸ í–‡ë¹›ë³‘ì› / ì„œìš¸ì‹œ ì˜ë“±í¬êµ¬ 249-33 / ì „í™”ë²ˆí˜¸ : 02-2680-6523~7 / íŒ©ìŠ¤ :
+				02-2680-6531<br /> ê²½ê¸° í–‡ë¹›ë³‘ì› / ê²½ê¸°ë„ ê´‘ëª…ì‹œ ì² ì‚°ë¡œ 56 / ì „í™”ë²ˆí˜¸ : 02-2680-6820 /
+				íŒ©ìŠ¤ : 02-2680-6826</br>
 				</br>
 				</br>
 			</div> -->

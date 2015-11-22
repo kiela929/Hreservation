@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 
        <form>
 		<table border=0 width="600" align="center" height="350" >	
@@ -11,38 +11,38 @@
       			<td height="1" colspan="2"></td>
     	  	</tr>
 			<tr align="center">	
-				<td align="center" bgcolor="#eeeee">ÀÌ¸§</td>
+				<td align="center" bgcolor="#eeeee">ì´ë¦„</td>
 				<td>
 			${memberDTO.name}
 				</td>				
 			</tr>
 				
 				<tr align="center">	
-				<td  align="center" bgcolor="#eeeee">»ı³â¿ùÀÏ</td>
+				<td  align="center" bgcolor="#eeeee">ìƒë…„ì›”ì¼</td>
 				<td>
 ${memberDTO.jumin1 }
 				</td>				
 			</tr>
 					<tr align="center">	
-				<td align="center" bgcolor="#eeeee">¿¹¾àÀÏ</td>
+				<td align="center" bgcolor="#eeeee">ì˜ˆì•½ì¼</td>
 				<td>
 	${ReserveDTO.reserve_date_string }
 				</td>				
 			</tr>
 				<tr align="center">	
-				<td align="center" bgcolor="#eeeee">½Ã°£</td>
+				<td align="center" bgcolor="#eeeee">ì‹œê°„</td>
 				<td>
 				${ReserveDTO.str_time}
 				</td>				
 			</tr>
 					<tr align="center">	
-				<td align="center" bgcolor="#eeeee">Áø·á°ú</td>
+				<td align="center" bgcolor="#eeeee">ì§„ë£Œê³¼</td>
 				<td>
 				${partDTO.part_name }
 				</td>				
 			</tr>
 					<tr align="center">	
-				<td align="center" bgcolor="#eeeee">´ã´çÀÇ</td>
+				<td align="center" bgcolor="#eeeee">ë‹´ë‹¹ì˜</td>
 				<td>
 				${doctorDTO.id }
 				</td>				

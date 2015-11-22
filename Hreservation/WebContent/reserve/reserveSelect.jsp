@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!-- ÇöÀç DB¿¡ ÀÖ´Â ³»¿ëÀ» doctorInPart ¿¡ ¸®½ºÆ®·Î °¡Áö°í ÀÖÀ½. ÀÌ°É 
-ÇöÀç Æû¿¡ Á¸ÀçÇÏ´Â select ¾ÈÀÇ ³»¿ë¾È¿¡ »Ñ·ÁÁÖ±â  -->
+<!-- í˜„ìž¬ DBì— ìžˆëŠ” ë‚´ìš©ì„ doctorInPart ì— ë¦¬ìŠ¤íŠ¸ë¡œ ê°€ì§€ê³  ìžˆìŒ. ì´ê±¸ 
+í˜„ìž¬ í¼ì— ì¡´ìž¬í•˜ëŠ” select ì•ˆì˜ ë‚´ìš©ì•ˆì— ë¿Œë ¤ì£¼ê¸°  -->
 
 
 <select name="doctornum">
- <option value="">´ã´çÀÇ</option>
+ <option value="">ë‹´ë‹¹ì˜</option>
   <c:forEach var="doctor" items="${doctorInPart}" varStatus="i">
   <option value=${doctor.doctornum }>${doctor.name }</option>
   </c:forEach>

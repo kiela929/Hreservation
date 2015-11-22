@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -72,7 +72,7 @@
                 },
                 yaxis: {
                     tickOptions: {
-                        formatString: "%'d °Ç"
+                        formatString: "%'d ê±´"
                     },
                     rendererOptions: {
                         forceTickAt0: true
@@ -80,7 +80,7 @@
                 },
                 y2axis: {
                     tickOptions: {
-                        formatString: "%'d °Ç"
+                        formatString: "%'d ê±´"
                     },
                     rendererOptions: {
                         // align the ticks on the y2 axis with the y axis.
@@ -103,9 +103,9 @@
 <body>
 
 <center>  
-<input type="button" value="ÀÌ¹ø´Þ ¿¹¾à¼ö - ¿øÇü" onclick="javascript:window.location='pieChart.do'"/>
-<input type="button" value="ÀÌ¹ø´Þ ¿¹¾à¼ö - ¸·´ëÇü" onclick="javascript:window.location='barChart.do'"/>
-<input type="button" value="´©Àû ¿¹¾à¼ö" onclick="javascript:window.location='barMonthChart.do'"/>
+<input type="button" value="ì´ë²ˆë‹¬ ì˜ˆì•½ìˆ˜ - ì›í˜•" onclick="javascript:window.location='pieChart.do'"/>
+<input type="button" value="ì´ë²ˆë‹¬ ì˜ˆì•½ìˆ˜ - ë§‰ëŒ€í˜•" onclick="javascript:window.location='barChart.do'"/>
+<input type="button" value="ëˆ„ì  ì˜ˆì•½ìˆ˜" onclick="javascript:window.location='barMonthChart.do'"/>
 <br/><br/>
 
 <div id="chart3"></div></center>
